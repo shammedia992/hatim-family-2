@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Hatim Abu Tawila, 56, and his wife lost their home and only son in the war in Gaza. Help them seek safety, medical care and a fresh start. Goal: $60,000.">
+<meta property="og:title" content="Help Hatim Abu Tawila and His Wife Build a New Future">
+<meta property="og:description" content="A journey toward safety, medical care, and a fresh start. Goal: $60,000.">
+<meta property="og:image" content="photo.jpg">
+<title>Hatim and His Wife</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@500;600;700&family=Albert+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: a journey. Quiet opening with a portrait, then three goals drawn as stops on one vertical path, ending in a single dark donation panel. */
+:root{
+  --bg:#e8eee9;          /* pale sage */
+  --surface:#f6f9f6;
+  --fg:#18241f;          /* forest ink */
+  --muted:#4f5e56;
+  --line:#cdd8d0;
+  --accent:#8c4d0a;      /* ochre, the dawn colour */
+  --accent-fg:#ffffff;
+  --path:#2f5d4a;
+  --panel:#1b2a24;
+  --panel-fg:#f0f4f1;
+  --panel-muted:#aebcb4;
+  --panel-btn:#f0b25c;
+  --display:'Crimson Pro',Georgia,'Times New Roman',serif;
+  --ui:'Albert Sans','Segoe UI',Tahoma,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0f1713;--surface:#17211c;--fg:#e8eee9;--muted:#a0afa6;--line:#26352d;--accent:#e9a95a;--accent-fg:#1a1105;--path:#79b59b;
+  --panel:#1a2822;--panel-fg:#f0f4f1;--panel-muted:#aebcb4;--panel-btn:#f0b25c;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f1713;--surface:#17211c;--fg:#e8eee9;--muted:#a0afa6;--line:#26352d;--accent:#e9a95a;--accent-fg:#1a1105;--path:#79b59b;
+  --panel:#1a2822;--panel-fg:#f0f4f1;--panel-muted:#aebcb4;--panel-btn:#f0b25c;color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--ui);font-size:17px;line-height:1.7;padding-inline:20px}
+#app{max-width:1040px;margin-inline:auto;padding-block:0 48px}
+h1,h2,h3,p,ul,ol,figure{margin:0}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+
+.bar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-block:20px;font-size:14px;color:var(--muted);letter-spacing:.04em}
+.bar b{font-family:var(--display);font-size:21px;letter-spacing:0;color:var(--fg);font-weight:600}
+
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,5vw,64px);align-items:center;padding-block:24px 64px}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(38px,5.4vw,64px);line-height:1.08;text-wrap:balance}
+.sub{font-family:var(--display);font-style:italic;font-size:clamp(22px,2.6vw,28px);color:var(--accent);margin-top:16px;line-height:1.35}
+.lead{font-size:19px;color:var(--muted);margin-top:16px;max-width:42ch;text-wrap:pretty}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;font:inherit;font-weight:600;font-size:17px;text-decoration:none;padding:13px 26px;border-radius:8px;border:1.5px solid var(--accent);background:var(--accent);color:var(--accent-fg);cursor:pointer}
+.btn:hover{filter:brightness(1.1)}
+.btn.ghost{background:transparent;color:var(--fg);border-color:var(--line)}
+.btn.ghost:hover{border-color:var(--accent)}
+.photo{width:100%}
+.photo img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:4px}
+.photo figcaption{font-size:14px;color:var(--muted);margin-top:10px}
+
+.goal{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:clamp(24px,5vw,72px);padding-block:40px;border-block:1px solid var(--line);align-items:center}
+.goal .amt{display:flex;flex-direction:column}
+.goal .amt span{font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.goal .amt b{font-family:var(--display);font-size:clamp(48px,7vw,80px);line-height:1.05;color:var(--path);font-variant-numeric:tabular-nums}
+.goal p{max-width:52ch;font-size:18px;text-wrap:pretty}
+.intro{max-width:62ch;margin-bottom:28px;font-size:18px;text-wrap:pretty}
+.sec{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:clamp(24px,5vw,72px);padding-block:56px;border-top:1px solid var(--line)}
+h2{font-family:var(--display);font-size:clamp(28px,3.6vw,42px);line-height:1.15;text-wrap:balance;font-weight:600}
+.body{display:flex;flex-direction:column;gap:20px;max-width:62ch;font-size:18px}
+.body p{text-wrap:pretty}
+.memory{border-inline-start:3px solid var(--accent);padding-inline-start:20px;font-family:var(--display);font-size:23px;line-height:1.5}
+
+.path{list-style:none;padding:0;max-width:62ch;position:relative;display:flex;flex-direction:column;gap:36px}
+.path::before{content:"";position:absolute;inset-block:14px;inset-inline-start:17px;width:2px;background:var(--line)}
+.path li{position:relative;padding-inline-start:60px}
+.path .n{position:absolute;inset-inline-start:0;top:0;width:36px;height:36px;border-radius:50%;background:var(--path);color:var(--bg);font-weight:600;display:grid;place-items:center;font-variant-numeric:tabular-nums}
+.path h3{font-family:var(--display);font-size:27px;font-weight:600;line-height:1.2;margin-bottom:6px}
+.path p{color:var(--muted);text-wrap:pretty}
+
+.donate{background:var(--panel);color:var(--panel-fg);border-radius:14px;padding:clamp(28px,5vw,64px);display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:clamp(24px,5vw,56px);align-items:center;margin-top:56px}
+.donate h2{font-size:clamp(32px,4.4vw,50px);color:var(--panel-fg);font-weight:700}
+.donate p.t{margin-top:14px;color:var(--panel-muted);max-width:46ch;text-wrap:pretty}
+.donate .btn{background:var(--panel-btn);border-color:var(--panel-btn);color:#1f1608;margin-top:24px;font-size:18px}
+.donate .btn.ghost{background:transparent;color:var(--panel-fg);border-color:#4f6459;margin-inline-start:10px}
+.number{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:20px;color:var(--panel-muted);font-size:15px}
+.number bdi{direction:ltr;unicode-bidi:isolate;font-variant-numeric:tabular-nums;color:var(--panel-fg);font-size:17px;letter-spacing:.03em;user-select:all}
+.chip{font:inherit;font-size:13px;border:1px solid #4f6459;background:transparent;color:var(--panel-fg);padding:4px 12px;border-radius:999px;cursor:pointer}
+.chip:hover{border-color:var(--panel-btn)}
+.qr{justify-self:center;text-align:center;font-size:14px;color:var(--panel-muted)}
+.qr img{display:block;width:min(210px,100%);height:auto;border:6px solid #fff;border-radius:8px;margin:0 auto 10px;background:#fff}
+.thanks{padding-block:40px 0;max-width:62ch;color:var(--muted);display:flex;flex-direction:column;gap:14px;text-wrap:pretty}
+.sign{font-family:var(--display);font-style:italic;font-size:24px;color:var(--fg)}
+footer{padding-top:28px;color:var(--muted);font-size:14px}
+
+@media (max-width:820px){
+  .hero,.sec,.donate,.goal{grid-template-columns:minmax(0,1fr)}
+  .hero{padding-block:4px 44px}
+  .donate .btn.ghost{margin-inline-start:0}
+}
+@media (prefers-reduced-motion:no-preference){.btn,.chip{transition:filter .15s,border-color .15s}}
+html{color-scheme:light}
+body{margin:0}
+img{max-width:100%}
+[hidden]{display:none!important}
+</style>
+
+</head>
+<body>
+<div id="app" lang="en" dir="ltr">
+  <div class="bar"><b>Hatim and His Wife</b><span>Gaza, Palestine</span></div>
+
+  <header class="hero">
+    <div>
+      <h1>Help Hatim Abu Tawila and His Wife Build a New Future</h1>
+      <p class="sub">A journey toward safety, medical care, and a fresh start.</p>
+      <p class="lead">Hatim, 56, from Gaza, lost his home and his only son in the war. He and his wife hope to rebuild.</p>
+      <div class="cta-row">
+        <a class="btn donate-link" href="https://wa.me/972599406629" target="_blank" rel="noopener">Donate via WhatsApp</a>
+        <a class="btn ghost" href="#story">Read our story</a>
+      </div>
+    </div>
+    <figure class="photo">
+      <img src="photo.jpg" alt="A couple seen from behind, embracing, looking toward a ruined city at sunrise" width="1200" height="900">
+      <figcaption>Illustrative image</figcaption>
+    </figure>
+  </header>
+
+  <div class="goal">
+    <div class="amt"><span>Our fundraising goal</span><b>$60,000</b></div>
+    <p>We are seeking to raise $60,000 USD to help us pursue safety, access medical care, and work toward building a new future together.</p>
+  </div>
+
+  <section class="sec" id="story">
+    <h2>Our story</h2>
+    <div class="body">
+      <p>My name is Hatim Abu Tawila. I am 56 years old and from Gaza, Palestine. I am sharing my story in the hope of receiving support to help my wife and me build a more secure future.</p>
+      <p>During the war in Gaza, our home was completely destroyed. We lost the place where we had built our lives and the stability we once knew.</p>
+      <p class="memory">We also lost our only adopted son, who was killed during the war. His memory remains an important part of our lives as we look toward the future.</p>
+      <p>Today, my wife and I hope to find a way to rebuild our lives and access opportunities that have become difficult to pursue under our current circumstances.</p>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2>How the funds will be used</h2>
+    <div>
+    <p class="intro">These funds will help cover the costs associated with the following goals.</p>
+    <ol class="path">
+      <li>
+        <span class="n">1</span>
+        <h3>Seeking safety</h3>
+        <p>We hope to use part of the funds to cover the expenses associated with leaving Gaza and reaching a safer place, subject to the necessary travel arrangements and permissions.</p>
+      </li>
+      <li>
+        <span class="n">2</span>
+        <h3>Accessing medical care</h3>
+        <p>We hope to consult qualified medical professionals and explore appropriate medical advice and treatment options for infertility.</p>
+      </li>
+      <li>
+        <span class="n">3</span>
+        <h3>Exploring fertility treatment</h3>
+        <p>My wife and I would also like to explore the possibility of having a child through in vitro fertilization (IVF), if recommended by qualified medical specialists. We understand that treatment outcomes cannot be guaranteed, but access to medical advice and care would give us an opportunity to consider our options.</p>
+      </li>
+    </ol>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2>Help us move forward</h2>
+    <div class="body">
+      <p>At 56, I hope to create a more stable future for my wife and myself. Rebuilding after the loss of our home and son is a difficult journey, but we remain hopeful that we can find safety, access medical care, and begin a new chapter in our lives.</p>
+      <p>Our fundraising goal of $60,000 represents an opportunity to take meaningful steps toward these goals. Every contribution, regardless of size, can help us move closer to a safer and more secure future.</p>
+      <p>If you are unable to donate, sharing this campaign with others would also be greatly appreciated. Your kindness, generosity, and support can make a meaningful difference in our lives.</p>
+    </div>
+  </section>
+
+  <section class="donate" id="donate">
+    <div>
+      <h2>Donate or contact us on WhatsApp</h2>
+      <p class="t">Every contribution, regardless of size, can help. Message us to donate or to ask any question.</p>
+      <a class="btn donate-link" href="https://wa.me/972599406629" target="_blank" rel="noopener">Donate via WhatsApp</a>
+      <button class="btn ghost" id="share" type="button">Copy link to share</button>
+      <div class="number">
+        <span>Or message:</span>
+        <bdi id="num">+972 59 940 6629</bdi>
+        <button class="chip" id="copy" type="button">Copy</button>
+        <span id="copied" role="status" aria-live="polite"></span>
+      </div>
+    </div>
+    <div class="qr">
+      <img src="qr.jpg" alt="QR code that opens a WhatsApp chat" width="312" height="312">
+      Scan with your phone
+    </div>
+  </section>
+
+  <div class="thanks">
+    <p>Thank you for taking the time to read our story and for considering supporting our efforts to rebuild our lives with dignity and hope.</p>
+    <p class="sign">With sincere gratitude, Hatim Abu Tawila and his wife</p>
+  </div>
+
+  <footer>Hatim Abu Tawila and his wife, Gaza, Palestine</footer>
+</div>
+
+<script>
+(function(){
+  var msg=document.getElementById('copied');
+  function say(s){msg.textContent=s;setTimeout(function(){msg.textContent=''},2200)}
+  function selectNum(){try{var r=document.createRange();r.selectNodeContents(document.getElementById('num'));var s=getSelection();s.removeAllRanges();s.addRange(r)}catch(e){}}
+  function copy(text,fallback){
+    try{navigator.clipboard.writeText(text).then(function(){say('Copied')},function(){fallback&&fallback()})}catch(e){fallback&&fallback()}
+  }
+  document.getElementById('copy').addEventListener('click',function(){copy('+972599406629',function(){selectNum();say('Select and copy the number')})});
+  document.getElementById('share').addEventListener('click',function(){copy(location.href.split('#')[0],function(){say('Copy the address from your browser')})});
+  var text=encodeURIComponent("Hello, I would like to support Hatim and his wife.");
+  document.querySelectorAll('.donate-link').forEach(function(a){a.href='https://wa.me/972599406629?text='+text});
+})();
+</script>
+
+</body>
+</html>
